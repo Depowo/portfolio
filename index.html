@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Mendes · Portfólio</title>
+<meta name="description" content="Diego Mendes Santos: IA aplicada, UI/UX e DevOps. Agentes, automações, interfaces e infraestrutura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Crect width='10' height='10' fill='%231450D2'/%3E%3Cpath d='M5 1.5C5.2 4.6 5.4 4.8 8.5 5C5.4 5.2 5.2 5.4 5 8.5C4.8 5.4 4.6 5.2 1.5 5C4.6 4.8 4.8 4.6 5 1.5Z' fill='%23EBE1C6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --blue:#1450D2;
+  --blue-deep:#0B3BA6;
+  --cream:#EBE1C6;
+  --cream-2:#F4EEDD;
+  --paper:#F7F3E8;
+  --ink:#111111;
+  --ink-soft:#3A3A3A;
+  --line:3px;
+  --r-xl:40px;
+  --r-lg:28px;
+  --shadow:8px 8px 0 var(--ink);
+  --wide:"Archivo",system-ui,sans-serif;
+  --pixel:"Silkscreen",ui-monospace,monospace;
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--wide);
+  font-variation-settings:"wdth" 100;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+img,svg{display:block}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+
+/* ---------- elementos recorrentes ---------- */
+.sparkle{position:absolute;width:var(--s,28px);height:var(--s,28px);color:var(--c,var(--blue));pointer-events:none}
+.sparkle svg{width:100%;height:100%}
+@media (prefers-reduced-motion:no-preference){
+  .sparkle{animation:twinkle 3.6s var(--d,0s) infinite ease-in-out}
+  @keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.72) rotate(18deg)}}
+}
+.oval{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.55em 1.3em;border:var(--line) solid var(--ink);border-radius:999px;
+  font-family:var(--pixel);font-weight:700;font-size:15px;letter-spacing:.02em;
+  background:var(--cream);box-shadow:4px 4px 0 var(--ink);white-space:nowrap;text-decoration:none;
+}
+.oval.blue{background:var(--blue);color:var(--cream)}
+.h-arrow{
+  display:inline-flex;align-items:center;gap:.25em;
+  font-variation-settings:"wdth" 112;font-weight:600;
+  font-size:clamp(22px,2.4vw,30px);letter-spacing:-.01em;color:var(--blue);line-height:1.1;
+}
+.h-arrow svg{width:.8em;height:.8em;flex:none}
+.on-blue .h-arrow,.on-ink .h-arrow{color:var(--cream)}
+.panel{
+  position:relative;background:var(--cream);border:var(--line) solid var(--ink);
+  border-radius:var(--r-xl);box-shadow:var(--shadow);
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  --k:var(--ink);
+  position:relative;padding:7px 14px;font-size:14px;font-weight:500;
+  border:1.5px solid var(--k);
+  background:
+    linear-gradient(var(--k),var(--k)) top left/7px 7px no-repeat,
+    linear-gradient(var(--k),var(--k)) top right/7px 7px no-repeat,
+    linear-gradient(var(--k),var(--k)) bottom left/7px 7px no-repeat,
+    linear-gradient(var(--k),var(--k)) bottom right/7px 7px no-repeat;
+  margin:3px;
+}
+.on-blue .chip,.on-ink .chip{--k:var(--cream);color:var(--cream)}
+.tag{
+  display:inline-block;font-family:var(--pixel);font-size:11px;font-weight:700;letter-spacing:.04em;
+  padding:3px 9px;border-radius:999px;background:var(--ink);color:var(--cream);white-space:nowrap;
+}
+.on-blue .tag{background:var(--cream);color:var(--blue)}
+.on-ink .tag{background:var(--blue);color:var(--cream)}
+.px{font-family:var(--pixel);font-weight:700}
+
+/* ---------- topo ---------- */
+.hero{background:var(--blue);color:var(--cream);border-bottom:6px solid var(--ink);position:relative;overflow:hidden}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--pixel);font-weight:700;font-size:18px}
+.mark i{width:34px;height:34px;display:grid;place-items:center;background:var(--cream);color:var(--blue);border-radius:10px;font-style:normal}
+.nav{display:flex;gap:6px}
+.nav a{text-decoration:none;font-weight:500;font-size:15px;padding:8px 14px;border-radius:999px;transition:background .2s var(--ease-out),color .2s}
+.nav a:hover{background:var(--cream);color:var(--blue)}
+.status{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;padding:8px 14px;border:2px solid var(--cream);border-radius:999px}
+.status b{width:9px;height:9px;border-radius:50%;background:#7CF29A;box-shadow:0 0 0 0 rgba(124,242,154,.6)}
+@media (prefers-reduced-motion:no-preference){.status b{animation:pulse 2s infinite}@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(124,242,154,0)}100%{box-shadow:0 0 0 0 rgba(124,242,154,0)}}}
+
+.title{
+  font-variation-settings:"wdth" 125;font-weight:500;
+  font-size:clamp(84px,21.5vw,300px);line-height:.86;letter-spacing:-.035em;
+  display:flex;align-items:flex-end;justify-content:center;
+  padding:clamp(28px,5vw,60px) 0 clamp(18px,3vw,34px);
+}
+.pxO{height:.735em;width:auto;margin:0 .02em .01em;flex:none}
+.areas-line{display:flex;align-items:center;gap:18px;padding-bottom:clamp(36px,6vw,70px);font-size:clamp(15px,1.9vw,24px);font-weight:500;font-variation-settings:"wdth" 110}
+.areas-line span{white-space:nowrap}
+.areas-line hr{flex:1;border:0;border-top:1.5px solid var(--cream);opacity:.8}
+.title-in{position:relative;display:flex;align-items:flex-end}
+.hero .hello{position:absolute;left:-.3em;top:-.08em;transform:rotate(-12deg);color:var(--ink);font-size:clamp(13px,1.3vw,18px)}
+.hero .cvlink{position:absolute;right:-.42em;top:-.02em;transform:rotate(10deg);font-size:clamp(13px,1.3vw,18px);text-decoration:none}
+.hero .cvlink:hover{background:var(--ink)}
+
+/* ---------- sobre ---------- */
+section{padding:clamp(70px,9vw,120px) 0 0}
+.about{display:grid;grid-template-columns:1.55fr 1fr;gap:28px;align-items:start}
+.about-main{display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;overflow:visible}
+.portrait{
+  background:var(--blue);border-right:var(--line) solid var(--ink);
+  border-radius:calc(var(--r-xl) - 3px) 0 0 calc(var(--r-xl) - 3px);
+  display:grid;place-items:center;padding:36px 20px;position:relative;min-height:330px;
+}
+.avatar{
+  width:auto;height:min(290px,72vw);max-width:88%;object-fit:contain;
+  filter:drop-shadow(3px 0 0 var(--cream)) drop-shadow(-3px 0 0 var(--cream)) drop-shadow(0 3px 0 var(--cream)) drop-shadow(0 -3px 0 var(--cream)) drop-shadow(7px 7px 0 var(--ink));
+}
+@media (prefers-reduced-motion:no-preference){
+  .avatar{animation:hop 2.8s ease-in-out infinite}
+  @keyframes hop{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(-2deg)}}
+}
+.portrait .oval{position:absolute;left:-26px;top:22px;transform:rotate(-10deg);font-size:17px}
+.about-text{padding:36px 34px 34px}
+.about-text p{margin-top:14px;font-size:16.5px;color:var(--ink-soft);max-width:56ch}
+.about-text p strong{color:var(--ink);font-weight:650}
+.about-main .badge{position:absolute;right:-18px;top:-26px;transform:rotate(12deg)}
+.side{display:grid;gap:28px}
+.side .panel{padding:28px 28px 30px}
+.contact-mini{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:15.5px}
+.contact-mini a{text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color .2s}
+.contact-mini a:hover{border-color:var(--blue)}
+.edu small{display:block;margin-top:12px;font-weight:700;font-style:italic;font-size:14px}
+.edu p{font-size:15px;color:var(--ink-soft)}
+
+/* ---------- áreas ---------- */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.big{
+  font-variation-settings:"wdth" 125;font-weight:600;font-size:clamp(46px,8.4vw,118px);
+  line-height:.9;letter-spacing:-.035em;color:var(--blue);
+}
+.big .px{color:var(--ink);font-weight:400;font-size:.9em;letter-spacing:0}
+.sec-head p{max-width:40ch;font-size:16px;color:var(--ink-soft)}
+
+.area{margin-bottom:44px}
+.area-top{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.num{font-family:var(--pixel);font-weight:700;font-size:15px;padding:6px 12px;border:2px solid currentColor;border-radius:999px}
+.area h3{font-variation-settings:"wdth" 125;font-weight:600;font-size:clamp(34px,4.6vw,60px);line-height:.95;letter-spacing:-.03em}
+.area .lead{font-size:16.5px;max-width:52ch}
+.xp{list-style:none;display:grid;gap:14px}
+.xp li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:15.5px;line-height:1.45}
+.sub{font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px;opacity:.85}
+
+/* IA: destaque azul, três colunas */
+.ai{background:var(--blue);color:var(--cream);padding:clamp(28px,4vw,48px)}
+.ai .grid{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:clamp(24px,3vw,44px)}
+.ai .lead{opacity:.92}
+.ai .sparkle{--c:var(--cream)}
+
+/* UI/UX: creme, ferramentas em cima */
+.ux{padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,3vw,48px);margin-left:clamp(0px,6vw,90px)}
+.ux .lead{color:var(--ink-soft)}
+.ux .tools{grid-column:1/-1;border-top:2px dashed var(--ink);padding-top:22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+
+/* DevOps: preto, cara de terminal */
+.ops{background:var(--ink);color:var(--cream);padding:clamp(28px,4vw,48px);margin-right:clamp(0px,6vw,90px);box-shadow:8px 8px 0 var(--blue)}
+.ops .grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,3vw,48px)}
+.term{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:14.5px;line-height:1.6;background:#1C1C1C;border:2px solid #333;border-radius:18px;padding:18px 20px}
+.term .bar{display:flex;gap:7px;margin-bottom:14px}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#444}
+.term .bar i:first-child{background:var(--blue)}
+.term p{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.term p+p{margin-top:10px}
+.term .pr{color:#7CA2FF}
+.term .who{color:#9a9a9a}
+
+/* ---------- trajetória ---------- */
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.track::before{content:"";position:absolute;left:3%;right:3%;top:34px;border-top:3px dashed var(--ink);z-index:0}
+.stop{position:relative;z-index:1;padding:22px 22px 24px;border-radius:var(--r-lg)}
+.stop .dot{width:24px;height:24px;background:var(--blue);border:3px solid var(--ink);border-radius:6px;margin-bottom:16px}
+.stop.now .dot{background:#7CF29A}
+.stop h4{font-variation-settings:"wdth" 118;font-weight:650;font-size:22px;line-height:1.1}
+.stop .role{font-weight:600;color:var(--blue);font-size:14.5px;margin-top:4px}
+.stop .when{font-family:var(--pixel);font-size:12px;margin-top:10px}
+.stop p{font-size:14.5px;color:var(--ink-soft);margin-top:10px}
+
+/* ---------- contato ---------- */
+.contact{padding:clamp(28px,5vw,60px);display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;background:var(--cream)}
+.contact .big{font-size:clamp(44px,7.4vw,104px)}
+.links{display:grid;gap:12px}
+.links a{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;text-decoration:none;
+  padding:16px 20px;border:var(--line) solid var(--ink);border-radius:18px;background:var(--cream-2);
+  font-weight:600;font-size:16px;box-shadow:4px 4px 0 var(--ink);
+  transition:transform .18s var(--ease-out),box-shadow .18s var(--ease-out),background .18s;
+}
+.links a small{font-weight:500;color:var(--ink-soft);font-size:14px;text-align:right;overflow-wrap:anywhere;min-width:0}
+.links a>span{white-space:nowrap}
+.links a:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);background:#fff}
+.links a:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.links a.cta{background:var(--blue);color:var(--cream)}
+.links a.cta small{color:var(--cream);opacity:.85}
+footer{margin-top:clamp(70px,9vw,120px);background:var(--blue);color:var(--cream);border-top:6px solid var(--ink);padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
+
+/* ---------- entrada ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+  .reveal.in{opacity:1;transform:none}
+  .panel{transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1020px){
+  .ai .grid{grid-template-columns:1fr 1fr}
+  .ai .grid>div:first-child{grid-column:1/-1}
+  .track{grid-template-columns:1fr 1fr}
+  .track::before{display:none}
+  .about{grid-template-columns:1fr}
+  .side{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav{display:none}
+  .about,.ux,.ops .grid,.contact{grid-template-columns:1fr}
+  .side{grid-template-columns:1fr}
+  .about-main{grid-template-columns:1fr}
+  .portrait{border-right:0;border-bottom:var(--line) solid var(--ink);border-radius:calc(var(--r-xl) - 3px) calc(var(--r-xl) - 3px) 0 0;min-height:260px}
+  .portrait .oval{left:14px;top:14px}
+  .about-main .badge{right:10px;top:-22px}
+  .ux,.ops{margin:0}
+  .hero .hello,.hero .cvlink{display:none}
+}
+@media (max-width:600px){
+  :root{--r-xl:28px;--shadow:5px 5px 0 var(--ink)}
+  .ai .grid,.track{grid-template-columns:1fr}
+  .areas-line{gap:10px}
+  .areas-line hr{min-width:14px}
+  .about-text{padding:26px 22px}
+  .status{font-size:12.5px;padding:6px 11px}
+  .ops{box-shadow:5px 5px 0 var(--blue)}
+  .contact .big{font-size:clamp(30px,10vw,44px)}
+  .big{font-size:clamp(38px,12vw,60px)}
+  .contact{padding:26px 20px}
+}
+@media (max-width:480px){.status{display:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spk" viewBox="-1 -1 2 2"><path d="M0-1C.07-.1.1-.07 1 0 .1.07.07.1 0 1-.07.1-.1.07-1 0-.1-.07-.07-.1 0-1Z" fill="currentColor"/></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M5 5 19 19M19 7v12H7" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="square"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="mark" href="#top" aria-label="Início"><i>DM</i>diego.mendes</a>
+      <nav class="nav" aria-label="Seções">
+        <a href="#sobre">Sobre</a><a href="#areas">Áreas</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
+      </nav>
+      <span class="status"><b aria-hidden="true"></b>Aberto a oportunidades</span>
+    </div>
+
+    <h1 class="title" id="top" aria-label="Diego"><span class="title-in">
+      <span class="oval hello" aria-hidden="true">Olá!</span>
+      <a class="oval blue cvlink" href="curriculo-diego-mendes.pdf" download aria-label="Baixar currículo">CV ↓</a>
+      <span aria-hidden="true">DIEG</span>
+      <svg class="pxO" viewBox="0 0 10 12" aria-hidden="true">
+        <path fill="var(--cream)" d="M2 0h6v1h1v1h1v8h-1v1h-1v1H2v-1H1v-1H0V2h1V1h1Zm1 2v1H2v6h1v1h4V9h1V3H7V2Z"/>
+        <use href="#spk" x="3.2" y="4.2" width="3.6" height="3.6" fill="var(--blue)" style="color:var(--cream)"/>
+      </svg>
+    </span></h1>
+
+    <div class="areas-line"><span>AI Engineer</span><hr><span>UI/UX</span><hr><span>DevOps</span></div>
+  </div>
+  <span class="sparkle" style="--c:var(--cream);left:9%;top:24%;--s:30px"><svg><use href="#spk"/></svg></span>
+  <span class="sparkle" style="--c:var(--cream);right:16%;top:72%;--s:22px;--d:1.2s"><svg><use href="#spk"/></svg></span>
+</header>
+
+<main>
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrap about">
+      <div class="panel about-main reveal">
+        <div class="portrait">
+          <span class="oval">Hello</span>
+          <img class="avatar" src="mii-diego.png" width="311" height="526" alt="Mii do Diego pulando, de camisa branca e calça preta">
+          <span class="sparkle" style="--c:var(--cream);right:12%;top:14%;--s:24px;--d:.6s"><svg><use href="#spk"/></svg></span>
+          <span class="sparkle" style="--c:var(--cream);left:14%;bottom:12%;--s:18px;--d:1.8s"><svg><use href="#spk"/></svg></span>
+        </div>
+        <div class="about-text">
+          <h2 class="h-arrow">Sobre mim <svg><use href="#arr"/></svg></h2>
+          <p>Oi, eu sou o <strong>Diego Mendes</strong>, tenho 20 anos e estou no 6º período de Sistemas de Informação na UNIUBE, em Uberlândia.</p>
+          <p>Uso IA todos os dias para <strong>construir coisas de verdade</strong>: agentes que investigam erros, automações que tiram trabalho repetitivo das pessoas, interfaces que dá gosto de usar e a infraestrutura que mantém tudo no ar.</p>
+          <p>Gosto de pegar um problema do zero e entregar funcionando.</p>
+        </div>
+        <a class="oval blue badge" href="curriculo-diego-mendes.pdf" download>CV</a>
+      </div>
+
+      <div class="side">
+        <div class="panel reveal">
+          <h2 class="h-arrow">Contato <svg><use href="#arr"/></svg></h2>
+          <ul class="contact-mini">
+            <li><a href="tel:+5534998786130">(34) 99878-6130</a></li>
+            <li><a href="mailto:maindiegomendes@gmail.com">maindiegomendes@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/diego-mendes-santos" target="_blank" rel="noopener">linkedin.com/in/diego-mendes-santos</a></li>
+          </ul>
+        </div>
+        <div class="panel edu reveal">
+          <h2 class="h-arrow">Formação <svg><use href="#arr"/></svg></h2>
+          <small>2024 – 2027 (previsão)</small>
+          <p>Bacharelado em Sistemas de Informação · Universidade de Uberaba (UNIUBE)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS -->
+  <section id="areas">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="big">TRÊS ÁRE<span class="px">A</span>S</h2>
+        <p>Três frentes que eu já pratico no dia a dia. Em cada uma, o que já fiz e as ferramentas que uso.</p>
+      </div>
+
+      <!-- 01 IA -->
+      <article class="panel area ai on-blue reveal">
+        <span class="sparkle" style="right:4%;top:-18px;--s:36px"><svg><use href="#spk"/></svg></span>
+        <div class="grid">
+          <div>
+            <div class="area-top"><span class="num">01</span></div>
+            <h3>AI<br>Engineer</h3>
+            <p class="lead" style="margin-top:16px">Agentes, skills e automações que resolvem problemas reais e economizam horas de trabalho manual.</p>
+          </div>
+          <div>
+            <h4 class="h-arrow" style="margin-bottom:18px">Experiências <svg><use href="#arr"/></svg></h4>
+            <ul class="xp">
+              <li><span class="tag">MITRA</span>Agente de investigação que junta documentação, logs, bancos, GitHub e Jira numa consulta só e acelera o diagnóstico de erros de clientes.</li>
+              <li><span class="tag">MITRA</span>Automação com IA das rotinas do suporte: chamados, issues para a engenharia e backups de clientes.</li>
+              <li><span class="tag">MITRA</span>Base de conhecimento usada em tempo real pelo agente de IA do atendimento.</li>
+              <li><span class="tag">PROPELLO</span>Swarm de agentes para diagnóstico, prospecção, conteúdo, campanhas e sites.</li>
+              <li><span class="tag">AGESTO</span>Skill de testes de segurança de ponta a ponta (isolamento entre empresas, JWT, LGPD).</li>
+              <li><span class="tag">PROJETO</span>Automações com N8N, OpenAI e Evolution API (WhatsApp).</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="h-arrow" style="margin-bottom:18px">Ferramentas <svg><use href="#arr"/></svg></h4>
+            <div class="chips">
+              <span class="chip">Claude Code</span><span class="chip">Skills</span><span class="chip">Agentes</span>
+              <span class="chip">Multiagente</span><span class="chip">MCP</span><span class="chip">Prompt engineering</span>
+              <span class="chip">OpenAI API</span><span class="chip">N8N</span><span class="chip">Evolution API</span>
+              <span class="chip">Python</span><span class="chip">Playwright</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 UI/UX -->
+      <article class="panel area ux reveal">
+        <span class="sparkle" style="left:-16px;top:-16px;--s:34px;--d:.8s"><svg><use href="#spk"/></svg></span>
+        <div>
+          <div class="area-top"><span class="num" style="color:var(--blue)">02</span></div>
+          <h3 style="color:var(--blue)">UI<span class="px" style="color:var(--ink)">/</span>UX</h3>
+          <p class="lead" style="margin-top:16px">Interfaces e identidades visuais pensadas para quem usa: claras, consistentes e com personalidade.</p>
+        </div>
+        <div>
+          <h4 class="h-arrow" style="margin-bottom:18px">Experiências <svg><use href="#arr"/></svg></h4>
+          <ul class="xp">
+            <li><span class="tag">AGESTO</span>Design da interface web: painel do dono, telas, gavetas e formulários.</li>
+            <li><span class="tag">AGESTO</span>Criação da identidade visual do produto: logo e símbolo.</li>
+            <li><span class="tag">PROPELLO</span>Estúdio de design com IA que gera posts, Reels, sites e identidade visual.</li>
+            <li><span class="tag">NASA 2025</span>Front-end do Stellar Stories, site educativo infantil com foco em UX.</li>
+            <li><span class="tag">MITRA</span>QA: validação de fluxos e jornadas de teste.</li>
+          </ul>
+        </div>
+        <div class="tools">
+          <h4 class="h-arrow">Ferramentas <svg><use href="#arr"/></svg></h4>
+          <div class="chips">
+            <span class="chip">Design de interface</span><span class="chip">Identidade visual</span><span class="chip">React</span>
+            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+            <span class="chip">Design responsivo</span><span class="chip">Testes de fluxo</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 DevOps -->
+      <article class="panel area ops on-ink reveal">
+        <div class="grid">
+          <div>
+            <div class="area-top"><span class="num">03</span></div>
+            <h3>Dev<span class="px" style="color:#7CA2FF">O</span>ps</h3>
+            <p class="lead" style="margin-top:16px;opacity:.9">Servidores, bancos, redes e deploy: a parte que ninguém vê, mas que segura tudo no ar.</p>
+            <h4 class="h-arrow" style="margin:28px 0 16px">Ferramentas <svg><use href="#arr"/></svg></h4>
+            <div class="chips">
+              <span class="chip">Linux</span><span class="chip">Docker</span><span class="chip">SSH</span>
+              <span class="chip">Cloudflare Tunnel</span><span class="chip">AWS</span><span class="chip">Oracle Cloud</span>
+              <span class="chip">Git / GitHub</span><span class="chip">JDBC</span><span class="chip">MySQL</span>
+              <span class="chip">PostgreSQL</span><span class="chip">Redes</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="h-arrow" style="margin-bottom:18px">Experiências <svg><use href="#arr"/></svg></h4>
+            <div class="term" role="list">
+              <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+              <p role="listitem"><span class="pr">$</span><span>conexões JDBC, migração de bancos, túneis Cloudflare e gestão de acessos <span class="who"># mitra</span></span></p>
+              <p role="listitem"><span class="pr">$</span><span>fluxo de deploy para produção <span class="who"># agesto</span></span></p>
+              <p role="listitem"><span class="pr">$</span><span>Linux, SSH, Docker e redes em produção; AWS e Oracle Cloud <span class="who"># horus</span></span></p>
+              <p role="listitem"><span class="pr">$</span><span>scripts de monitoramento e manutenção de servidores Windows e Linux <span class="who"># horus</span></span></p>
+              <p role="listitem"><span class="pr">$</span><span>automações com N8N e integração de APIs <span class="who"># horus</span></span></p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TRAJETÓRIA -->
+  <section id="trajetoria">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="big">TRAJETÓ<span class="px">R</span>IA</h2>
+      </div>
+      <div class="track">
+        <div class="panel stop reveal">
+          <div class="dot"></div>
+          <h4>Horus Soluções Integradas</h4>
+          <div class="role">Estágio em Infraestrutura</div>
+          <div class="when">OUT 2024 – JUL 2025</div>
+          <p>Linux, Docker, redes, nuvem e automações com N8N.</p>
+        </div>
+        <div class="panel stop reveal">
+          <div class="dot"></div>
+          <h4>Mitra</h4>
+          <div class="role">Analista de Suporte e QA</div>
+          <div class="when">DEZ 2025 – SET 2026</div>
+          <p>Agentes e automações com IA no suporte, QA e infraestrutura.</p>
+        </div>
+        <div class="panel stop now reveal">
+          <div class="dot"></div>
+          <h4>Agesto</h4>
+          <div class="role">Desenvolvedor</div>
+          <div class="when">OUT 2026 – ATUAL</div>
+          <p>ERP para prestadores de serviço: interface, identidade visual e deploy.</p>
+        </div>
+        <div class="panel stop now reveal">
+          <div class="dot"></div>
+          <h4>Propello</h4>
+          <div class="role">Design e Infraestrutura</div>
+          <div class="when">OUT 2026 – ATUAL</div>
+          <p>Agência de transformação digital: agentes, design e sites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="wrap">
+      <div class="panel contact reveal">
+        <span class="sparkle" style="right:-14px;top:-18px;--s:40px"><svg><use href="#spk"/></svg></span>
+        <div>
+          <h2 class="big">BORA<br>CONSTR<span class="px">U</span>IR?</h2>
+          <p style="margin-top:20px;max-width:40ch;color:var(--ink-soft)">Se você tem um problema que dá para resolver com IA, uma interface ou um servidor, me chama.</p>
+        </div>
+        <div class="links">
+          <a class="cta" href="https://www.linkedin.com/in/diego-mendes-santos" target="_blank" rel="noopener">LinkedIn <small>diego-mendes-santos ↗</small></a>
+          <a href="https://wa.me/5534998786130" target="_blank" rel="noopener">WhatsApp <small>(34) 99878-6130 ↗</small></a>
+          <a href="mailto:maindiegomendes@gmail.com"><span>E-mail</span> <small>maindiegomendes@gmail.com</small></a>
+          <a href="curriculo-diego-mendes.pdf" download>Currículo <small>PDF ↓</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Diego Mendes Santos</span><span>Feito com IA, no Claude Code</span></div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
