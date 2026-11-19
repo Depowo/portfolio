@@ -99,6 +99,44 @@ section{padding:120px 0 0}
 .item p{margin-top:6px;font-size:16.5px;color:var(--muted)}
 .item p strong{color:var(--text);font-weight:600}
 
+/* ---------- projetos ---------- */
+.case{padding:48px 0 8px;border-top:1px solid var(--line);margin-top:40px}
+.case + .case{margin-top:72px}
+.case-head{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.case-head h3{font-size:40px;font-weight:700;letter-spacing:-.035em;line-height:1}
+.meta{margin-top:10px;font-family:var(--mono);font-size:13px;color:var(--dim)}
+.case-link{display:inline-block;margin-top:16px;font-size:15px;font-weight:600;color:var(--accent)}
+.case-link:hover{text-decoration:underline;text-underline-offset:4px}
+.case-text{font-size:19px;line-height:1.55;color:var(--muted);max-width:62ch}
+.chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-family:var(--mono);font-size:12.5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.shots{margin-top:36px;display:grid;gap:16px}
+.shots figure{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.shots a{display:block;height:100%}
+.shots img,.shots video{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .5s var(--ease)}
+.shots a:hover img{transform:scale(1.015)}
+.shots-agesto{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 31%;grid-template-rows:auto auto}
+.shots-agesto .s-mob img{object-position:top center}
+.shots-agesto .s-main{grid-column:1/3}
+.shots-agesto .s-mob{grid-column:3;grid-row:1/3}
+.shots-agesto figure:not(.s-main):not(.s-mob){aspect-ratio:16/10}
+.shots-agesto .s-main{aspect-ratio:16/10}
+.shots-propello{grid-template-columns:2.1fr .82fr 1fr;align-items:stretch}
+.shots-propello .s-site img{object-position:center}
+.shots-propello .s-reel{aspect-ratio:9/16}
+.shots-propello .s-post img{object-position:left center}
+.note{margin-top:14px;font-size:14px;color:var(--dim)}
+.flow{margin-top:36px;display:grid;grid-template-columns:1fr 64px minmax(240px,1.1fr) 64px 1fr;align-items:center;gap:8px;padding:36px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2)}
+.flow-col{list-style:none;display:grid;gap:10px}
+.flow-col li{padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--muted);background:var(--bg)}
+.flow-col.out li{color:var(--text);border-color:rgba(126,156,255,.35)}
+.flow-arrow{height:2px;background:linear-gradient(90deg,var(--line),var(--accent));position:relative}
+.flow-arrow::after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left:9px solid var(--accent)}
+.flow-core{display:grid;gap:6px;text-align:center;padding:28px 22px;border:1px solid var(--accent);border-radius:var(--r);background:rgba(126,156,255,.07)}
+.flow-core .mono{font-size:12.5px;color:var(--accent)}
+.flow-core strong{font-size:22px;letter-spacing:-.02em}
+.flow-core span:last-child{font-size:14.5px;color:var(--muted)}
+
 /* ---------- trajetória ---------- */
 .track{position:relative;margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .track::before{content:"";position:absolute;left:0;right:0;top:9px;border-top:1px solid var(--line)}
@@ -141,6 +179,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .areas{grid-template-columns:1fr 1fr}
   .ctas{grid-column:1/-1;flex-direction:row}
   .area{grid-template-columns:1fr;gap:24px}
+  .case-head{grid-template-columns:1fr;gap:20px}
+  .flow{grid-template-columns:1fr;padding:24px}
+  .flow-arrow{width:2px;height:28px;margin:0 auto;background:linear-gradient(180deg,var(--line),var(--accent))}
+  .flow-arrow::after{right:auto;left:-5px;top:auto;bottom:-6px;border:6px solid transparent;border-top:9px solid var(--accent)}
   .track{grid-template-columns:1fr 1fr;row-gap:44px}
   .track::before{display:none}
   .track-wrap .figure{display:none}
@@ -159,6 +201,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   .facts{grid-template-columns:1fr 1fr}
   .work-head .figure{--h:160px;margin:0}
   .items{grid-template-columns:1fr}
+  .case-head h3{font-size:32px}
+  .case-text{font-size:17px}
+  .shots-agesto{grid-template-columns:1fr}
+  .shots-agesto .s-main{grid-column:auto}
+  .shots-agesto .s-mob{display:none}
+  .shots-propello{grid-template-columns:1fr 1fr}
+  .shots-propello .s-site{grid-column:1/-1}
   .track{grid-template-columns:1fr}
   .contact{grid-template-columns:1fr}
   .contact .figure{--h:280px;order:-1}
@@ -172,7 +221,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <div class="wrap">
     <a class="brand" href="#top">diego.mendes</a>
     <nav class="links" aria-label="Seções">
-      <a href="#trabalhos">Trabalhos</a><a href="#sobre">Sobre</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
+      <a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#trabalhos">Experiência</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
     </nav>
     <span class="status"><i aria-hidden="true"></i><span>aberto a oportunidades</span></span>
   </div>
@@ -193,11 +242,85 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <div><h2>Interface</h2><p>Telas e identidades visuais claras, consistentes e com personalidade.</p></div>
       <div><h2>Infraestrutura</h2><p>Servidores, bancos e deploy: o que segura tudo no ar.</p></div>
       <div class="ctas">
-        <a class="btn p" href="#trabalhos">Ver trabalhos</a>
+        <a class="btn p" href="#projetos">Ver projetos</a>
         <a class="btn s" href="curriculo-diego-mendes.pdf" download>Baixar currículo</a>
       </div>
     </div>
   </div>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="wrap">
+      <h2 class="sec-title reveal">Projetos</h2>
+
+      <!-- Agesto -->
+      <article class="case reveal">
+        <div class="case-head">
+          <div>
+            <h3>Agesto</h3>
+            <p class="meta">Desenvolvedor · out 2026 - hoje</p>
+            <a class="case-link" href="https://github.com/Agesto-Platform/Agesto" target="_blank" rel="noopener">Ver no GitHub ↗</a>
+          </div>
+          <div>
+            <p class="case-text">ERP para prestadores de serviço autônomos. Desenhei a interface web com IA (painel do dono, orçamentos, agenda, gavetas e formulários), criei a identidade visual e configurei o deploy para produção.</p>
+            <p class="chips"><span>React</span><span>TypeScript</span><span>Tailwind</span><span>.NET</span><span>Docker</span></p>
+          </div>
+        </div>
+        <div class="shots shots-agesto">
+          <figure class="s-main"><a href="provas/agesto-visao-geral.webp" target="_blank" rel="noopener"><img src="provas/agesto-visao-geral.webp" width="1600" height="1000" loading="lazy" alt="Agesto: visão geral com margem, faturamento, receita por dia e o painel do Agente"></a></figure>
+          <figure class="s-mob"><a href="provas/agesto-mobile.webp" target="_blank" rel="noopener"><img src="provas/agesto-mobile.webp" width="600" height="1298" loading="lazy" alt="Agesto no celular: visão geral"></a></figure>
+          <figure><a href="provas/agesto-orcamentos.webp" target="_blank" rel="noopener"><img src="provas/agesto-orcamentos.webp" width="1600" height="1000" loading="lazy" alt="Agesto: tela de orçamentos com etapas do rascunho ao atendimento"></a></figure>
+          <figure><a href="provas/agesto-agenda.webp" target="_blank" rel="noopener"><img src="provas/agesto-agenda.webp" width="1600" height="1000" loading="lazy" alt="Agesto: agenda mensal da equipe"></a></figure>
+        </div>
+        <p class="note">Telas reais do app, rodando em modo de demonstração com dados de exemplo.</p>
+      </article>
+
+      <!-- Propello -->
+      <article class="case reveal">
+        <div class="case-head">
+          <div>
+            <h3>Propello</h3>
+            <p class="meta">Design e Infraestrutura · out 2026 - hoje</p>
+          </div>
+          <div>
+            <p class="case-text">Agência de transformação digital para pequenos negócios de Uberlândia. Montei um estúdio de design com IA (skills orquestradas no Claude Code) que produz o site, os posts e os Reels, com o vídeo renderizado de HTML para MP4.</p>
+            <p class="chips"><span>Claude Code</span><span>Skills</span><span>HTML/CSS</span><span>Puppeteer</span><span>FFmpeg</span></p>
+          </div>
+        </div>
+        <div class="shots shots-propello">
+          <figure class="s-site"><a href="provas/propello-site.webp" target="_blank" rel="noopener"><img src="provas/propello-site.webp" width="1440" height="900" loading="lazy" alt="Site da Propello: Sites e tráfego pago para negócios de Uberlândia"></a></figure>
+          <figure class="s-reel"><video src="provas/propello-reels.mp4" poster="provas/propello-reels-poster.jpg" width="540" height="960" muted loop playsinline preload="none" aria-label="Reels da Propello: Quem não aparece, não vende"></video></figure>
+          <figure class="s-post"><a href="provas/propello-carrossel.webp" target="_blank" rel="noopener"><img src="provas/propello-carrossel.webp" width="900" height="1125" loading="lazy" alt="Carrossel da Propello: Feito em Uberlândia, pra quem vende em Uberlândia"></a></figure>
+        </div>
+      </article>
+
+      <!-- Mitra -->
+      <article class="case reveal">
+        <div class="case-head">
+          <div>
+            <h3>Mitra</h3>
+            <p class="meta">Suporte e QA · dez 2025 - set 2026</p>
+          </div>
+          <div>
+            <p class="case-text">Agente de investigação que junta, numa consulta só, as fontes que o suporte olhava uma por uma. Cada investigação vira documentação que o agente de IA do atendimento usa em tempo real.</p>
+            <p class="chips"><span>Claude Code</span><span>Skills</span><span>MCP</span><span>SQL</span></p>
+          </div>
+        </div>
+        <div class="flow" role="img" aria-label="Diagrama: documentação, logs, banco somente leitura, GitHub e Jira entram no agente de investigação, que devolve causa raiz, documentação na base e issue para a engenharia">
+          <ul class="flow-col">
+            <li>Documentação</li><li>Logs</li><li>Banco (só leitura)</li><li>GitHub</li><li>Jira</li>
+          </ul>
+          <div class="flow-arrow" aria-hidden="true"></div>
+          <div class="flow-core"><span class="mono">skill no claude code</span><strong>Agente de investigação</strong><span>cruza as fontes e explica o erro</span></div>
+          <div class="flow-arrow" aria-hidden="true"></div>
+          <ul class="flow-col out">
+            <li>Causa raiz do erro</li><li>Artigo na base de conhecimento</li><li>Issue para a engenharia</li>
+          </ul>
+        </div>
+        <p class="note">Diagrama ilustrativo. As telas e os dados reais são internos da Mitra.</p>
+      </article>
+    </div>
+  </section>
 
   <!-- SOBRE -->
   <section id="sobre">
@@ -218,7 +341,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <section id="trabalhos">
     <div class="wrap">
       <div class="work-head reveal">
-        <h2 class="sec-title">O que eu já fiz</h2>
+        <h2 class="sec-title">Experiência por área</h2>
         <div class="figure"><img src="mii/mii-chest.png" alt="Mii do Diego apresentando"></div>
       </div>
 
@@ -300,6 +423,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  // Reels: toca só quando aparece na tela e se o sistema não pede menos movimento
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const vio = new IntersectionObserver((es) => {
+      es.forEach((e) => { const v = e.target; if (e.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); } });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('.shots video').forEach((v) => vio.observe(v));
+  }
 </script>
 </body>
 </html>
